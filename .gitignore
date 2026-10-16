@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local data, weights and generated artifacts (review before adding)
+data/
+datasets/
+runs/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.h5
+*.keras
+*.engine
+*.bin
+
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
