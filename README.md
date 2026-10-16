@@ -1,4 +1,4 @@
-﻿# Multiclass UAV Detection and Localization using TinyML and Knowledge Distillation
+# Multiclass UAV Detection and Localization using TinyML and Knowledge Distillation
 
 **IIITDM Kurnool Internship Project**  
 **Research topic:** Embedded-Aware Knowledge Distillation for TinyML Multiclass UAV Detection and Localisation  
@@ -19,7 +19,7 @@ The four detection classes are **Airplane, Bird, Drone, and UAV**. The detector 
 
 - Prepare and reduce a multiclass aerial-object detection dataset while retaining fixed validation and test splits.
 - Compare lightweight YOLO-family teacher models under the project's evaluation setup.
-- Design a compact depthwise-separable CNN student for 128 Ã— 128 RGB inputs.
+- Design a compact depthwise-separable CNN student for 128 × 128 RGB inputs.
 - Transfer teacher information to the student through a combination of hard-label detection supervision and knowledge-distillation losses.
 - Reduce the student model's storage footprint using pruning and full INT8 quantization.
 - Evaluate the TensorFlow Lite model on CPU and the TensorFlow Lite Micro implementation on Arduino Nano 33 BLE Sense.
@@ -48,7 +48,7 @@ The report describes RGB-to-grayscale conversion during preprocessing, augmentat
 |---|---|
 | TinyissimoYOLO V1 / V1-Small / V5-B / V8-B | Separate frozen teacher candidates for knowledge-distillation experiments |
 | YOLO11n | Additional teacher/comparison model in the reported experiments |
-| Custom lightweight CNN | Student detector designed around a compact 128 Ã— 128 Ã— 3 input and 8 Ã— 8 Ã— 9 output |
+| Custom lightweight CNN | Student detector designed around a compact 128 × 128 × 3 input and 8 × 8 × 9 output |
 | Knowledge distillation | Transfers useful teacher prediction information to the student |
 | CIoU localization loss | Bounding-box localization supervision |
 | Objectness and multiclass classification losses | Hard-label detection supervision |
@@ -66,8 +66,8 @@ The report describes RGB-to-grayscale conversion during preprocessing, augmentat
 
 The report describes a 15-major-block depthwise-separable CNN:
 
-- Input: `128 Ã— 128 Ã— 3` RGB image
-- Output: `8 Ã— 8 Ã— 9` raw detection tensor
+- Input: `128 × 128 × 3` RGB image
+- Output: `8 × 8 × 9` raw detection tensor
 - Parameters: `133,305`
 - Approximate computation: `0.033337344 GFLOPs`
 - Keras layers: `105` including the input layer
@@ -111,12 +111,12 @@ The report also contains a separate YOLO11 hardware run with final total mAP@0.5
 
 ## Repository contents
 
-- `docs/architecture-and-methodology.md` â€” pipeline, student architecture, losses, compression and deployment
-- `docs/dataset-and-preprocessing.md` â€” dataset counts, splits and duplicate-reduction methods
-- `results/benchmark-results.md` â€” reported metrics and interpretation cautions
-- `docs/hardware-deployment.md` â€” Arduino Nano 33 BLE Sense and TFLM notes
-- `references/literature-survey.md` â€” papers and DOI links listed in the project report
-- `docs/reproducibility-and-limitations.md` â€” what is and is not included in this documentation repository
+- `docs/architecture-and-methodology.md` — pipeline, student architecture, losses, compression and deployment
+- `docs/dataset-and-preprocessing.md` — dataset counts, splits and duplicate-reduction methods
+- `results/benchmark-results.md` — reported metrics and interpretation cautions
+- `docs/hardware-deployment.md` — Arduino Nano 33 BLE Sense and TFLM notes
+- `references/literature-survey.md` — papers and DOI links listed in the project report
+- `docs/reproducibility-and-limitations.md` — what is and is not included in this documentation repository
 
 ## Important reproducibility note
 
@@ -127,6 +127,3 @@ Dataset licensing and redistribution permissions should be checked before publis
 ## Citation and attribution
 
 This work was conducted as an internship research project at IIITDM Kurnool under the supervision of Dr. M. Kiran Reddy. The project report includes a literature survey of 17 papers; see [`references/literature-survey.md`](references/literature-survey.md).
-
----
-
